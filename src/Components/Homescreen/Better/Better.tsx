@@ -35,7 +35,7 @@ const Hero = () => {
              <br />
              We are using mobile technology and agency banking to improve cash flow, eliminate errors  and increase profit for our users
             </Sub>
-       <NavLink to="/signup">
+       <NavLink to="/register">
        <Button>
               Create Free Account
             </Button>

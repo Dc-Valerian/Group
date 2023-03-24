@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRoutes } from 'react-router-dom'
-import Login from '../Login/Login'
-import Create from '../Create/Create'
+import Login from '../Auth/Login/Login'
+import Create from '../Auth/Create/Create'
 import Homescreen from '../Homescreen/Homescreen'
 
 
@@ -12,7 +12,7 @@ const Allroutes = () => {
             element: <Homescreen />
         },
         {
-            path: "/signup",
+            path: "/register",
             element: <Create />
         },
         {

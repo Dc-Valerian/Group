@@ -21,7 +21,7 @@ const Build = () => {
                     <p>
                     Earn 5%-15% when you save with any <br /> of these PiggyVest plans.
                     </p>
-                  <NavLink to="/signup">
+                  <NavLink to="/register">
                   <Button >Start Saving</Button>
                   </NavLink>
                 </First>

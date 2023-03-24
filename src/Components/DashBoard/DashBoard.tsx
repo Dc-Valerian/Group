@@ -2,11 +2,11 @@ import React from "react";
 import { AiOutlineLogout, AiOutlineMenu } from "react-icons/ai";
 import styled from "styled-components";
 import SideBarProps from "../Global/SideBarProps";
-import logo from "../Assets/logo1.svg";
+import logo from "../Assets/logo7.png";
 import { ImHome2 } from "react-icons/im";
 import { RxPerson, RxTarget } from "react-icons/rx";
 import { IoRocketOutline } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Dashboard from "../AllRoutes/DashboardRoute";
 // import DashBoadRoute from "../Routes/DashBoadRoute";
 
@@ -57,13 +57,22 @@ const DashBoard = () => {
   return (
     <Container>
       <MenuBar width={menu ? "" : "value"}>
+
         <MenuWrapper>
-          <Menu onClick={menuSidebar}>
+        <Menu onClick={menuSidebar}>
             <AiOutlineMenu />
           </Menu>
+        <NavLink to="/">
           <Logo src={logo} />
+        </NavLink>
+          
+
         </MenuWrapper>
-        <Link style={{ textDecoration: "none" }} to={"/"} onClick={homeRoute}>
+
+        <Link
+         style={{ textDecoration: "none" }}
+          to={"/dashboardhome"}
+           onClick={homeRoute}>
           <SideBarProps
             paddingleft={home ? "" : "value"}
             bg={home ? "" : "value"}
@@ -104,7 +113,7 @@ const DashBoard = () => {
             icon={<IoRocketOutline />}
           />
         </Link>
-        <Link
+        {/* <Link
           style={{ textDecoration: "none" }}
           to={"/account"}
           onClick={accountRoute}
@@ -118,7 +127,8 @@ const DashBoard = () => {
             text="account"
             icon={<RxPerson />}
           />
-        </Link>
+        </Link> */}
+        
         <Link
           style={{ textDecoration: "none" }}
           to={"/"}
@@ -132,7 +142,7 @@ const DashBoard = () => {
             <Icon>
               <AiOutlineLogout />
             </Icon>
-            <LogOutText>logout</LogOutText>
+            <LogOutText>Log Out</LogOutText>
           </LogoOut>
         </Link>
       </MenuBar>
@@ -151,7 +161,8 @@ const LogoOut = styled.div`
   align-items: center;
   cursor: pointer;
   transition: all 350ms;
-  margin-top: 280px;
+  margin-top: 200px;
+  /* background-color: red; */
 `;
 const Icon = styled.div`
   display: flex;
@@ -173,7 +184,8 @@ const LogOutText = styled.div`
 const Hold = styled.div``;
 
 const Logo = styled.img`
-  height: 26px;
+  /* height: 26px; */
+  width: 100px;
 `;
 
 const MenuWrapper = styled.div`
@@ -203,7 +215,8 @@ const MenuBar = styled.div<{ width: string }>`
   height: 100vh;
   flex-direction: column;
   display: flex;
-  background-color: rgb(6, 40, 99);
+  background-color: #031E3B;
+  /* background-color: red;   */
   transition: all 500ms;
 `;
 const ManinDasboard = styled.div`

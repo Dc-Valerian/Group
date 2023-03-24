@@ -24,7 +24,7 @@ const Header = () => {
     <div>
       <Container>
         <Wrapper>
-        <NavLink to="/homepage">
+        <NavLink to="/">
         <Logo src={logo}/>
         </NavLink>
 
@@ -38,7 +38,7 @@ const Header = () => {
         <NavLink to="./login">
             <Button>Login</Button>
           </NavLink>  
-        <NavLink to="./signup">
+        <NavLink to="./register">
             <Button>Sign Up</Button>
           </NavLink>  
            </Buttonwrapper>

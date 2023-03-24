@@ -1,24 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import styled from "styled-components";
-import { UserData } from "../../interface/interface";
-import { GetOneUser } from "../../Api/Api";
-// import img from "../Assets/person.png";
-import { useAppSelector } from "../../Global/ReduxState/Store";
 import Cards from "../Card/Cards";
 import Todo from "../Todo/Todo";
 
 const HomeDashBoard = () => {
-  const user = useAppSelector((state) => state.currentUser);
+  // const user = useAppSelector((state) => state.currentUser);
 
-  console.log(user);
+  // console.log(user);
 
-  const fetchUser = useQuery({
-    queryKey: ["user"],
-    queryFn: () => GetOneUser(user?._id),
-  });
+  // const fetchUser = useQuery({
+  //   queryKey: ["user"],
+  //   queryFn: () => GetOneUser(user?._id),
+  // });
 
-  console.log(fetchUser);
+  // console.log(fetchUser);
 
   return (
     <Container>
@@ -26,7 +22,8 @@ const HomeDashBoard = () => {
         <Top>
           <Left>
             <Bold>
-              <h1>{user?.userName?.toUpperCase()}</h1>
+              {/* <h1>{user?.userName?.toUpperCase()}</h1> */}
+              <h1> Welcome Valerian Pedro</h1>
             </Bold>
             <P>
               <p>wash your hands, it's lunch time 🍛!</p>

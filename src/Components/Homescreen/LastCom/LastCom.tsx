@@ -19,7 +19,7 @@ const LastCom = () => {
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </P>
             <Btn>
-            <NavLink to="/signup">
+            <NavLink to="/register">
             <Button>Get started Now</Button>
             </NavLink>
             </Btn>

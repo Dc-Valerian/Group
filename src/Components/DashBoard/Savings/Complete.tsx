@@ -1,36 +1,38 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import styled from "styled-components";
-import { GetOneUser } from "../../Api/Api";
-import { useAppSelector } from "../../Global/ReduxState/Store";
+// import { GetOneUser } from "../../Api/Api";
+// import { useAppSelector } from "../../Global/ReduxState/Store";
 
 const Complete = () => {
-  const user = useAppSelector((state) => state.currentUser);
-  console.log(user);
-  const fetchUser: any = useQuery({
-    queryKey: ["user"],
-    queryFn: () => GetOneUser(user?._id),
-  });
+  // const user = useAppSelector((state) => state.currentUser);
+  // console.log(user);
+  // const fetchUser: any = useQuery({
+  //   queryKey: ["user"],
+  //   queryFn: () => GetOneUser(user?._id),
+  // });
 
-  console.log("this is user", fetchUser);
+  // console.log("this is user", fetchUser);
   return (
     <Container>
       <Left>
         <p>Total Balance</p>
-        {fetchUser?.data ? (
+        {/* {fetchUser?.data ? (
           <h3>₦{fetchUser?.data?.data?.wallet[0]?.Balance}</h3>
         ) : (
           <h3>₦0.00</h3>
-        )}
+        )} */}
+        <h3>#0.00</h3>
       </Left>
 
       <Left>
         <p>Account Number</p>
-        {fetchUser?.data ? (
+        {/* {fetchUser?.data ? (
           <h3>{fetchUser?.data?.data?.accountNumber}</h3>
         ) : (
           <h3>Account unavalable</h3>
-        )}
+        )} */}
+        <h1>Account Unavailable</h1>
       </Left>
     </Container>
   );

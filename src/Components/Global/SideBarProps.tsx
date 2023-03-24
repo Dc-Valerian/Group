@@ -39,6 +39,7 @@ const Button = styled.div<{ paddingLeft: string }>`
   align-items: center;
   cursor: pointer;
   transition: all 350ms;
+  /* background-color: aliceblue; */
 `;
 const Icon = styled.div<{ displayIcon: string }>`
   display: ${({ displayIcon }) => (displayIcon ? "flex" : "none")};

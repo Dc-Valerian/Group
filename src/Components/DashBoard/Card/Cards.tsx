@@ -1,23 +1,18 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { TfiReload } from "react-icons/tfi";
-// import img1 from "../Assets/diamond.png";
-// import img2 from "../Assets/power.png";
-// import img3 from "../Assets/money.png";
 import { AiOutlineClose } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
-import { TransferMoney } from "../../Api/Api";
-import { useAppSelector } from "../../Global/ReduxState/Store";
 import Swal from "sweetalert2";
 import axios from "axios";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-const localUrl = "http://localhost:2001";
+
+
 const Cards = () => {
-  const user = useAppSelector((state) => state.currentUser);
   const [show, setShow] = useState(false);
   const [cancle, setCancle] = useState(false);
 
@@ -45,37 +40,7 @@ const Cards = () => {
     setShow(!false);
   };
 
-  const posting = useMutation({
-    mutationFn: (data) => {
-      return TransferMoney(data, user?._id);
-    },
 
-    onSuccess: (data) => {
-      Swal.fire({
-        title: "succeful",
-        icon: "success",
-      });
-    },
-  });
-
-  const onSubmit = handleSubmit(async (data) => {
-    await axios
-      .post(`${localUrl}/api/user/sendmoney/${user?._id}/${user?._id}`, data)
-      .then((res) => {
-        Swal.fire({
-          title: "succeful",
-          icon: "success",
-        });
-      })
-      .catch((err) => {
-        Swal.fire({
-          title: "an error occured",
-          icon: "error",
-          text: `${err.response?.data?.message}`,
-        });
-      });
-    reset();
-  });
   return (
     <Container>
       <Top>
@@ -143,9 +108,9 @@ const Cards = () => {
               />
             </Tap2>
             <Proceed
-              onClick={() => {
-                onSubmit();
-              }}
+              // onClick={() => {
+              //   onSubmit();
+              // }}
             >
               Proceed
             </Proceed>

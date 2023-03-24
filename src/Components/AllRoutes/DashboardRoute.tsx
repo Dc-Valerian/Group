@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   const element = useRoutes([
     {
-      path:"/",
+      path:"/dashboardhome",
       element:<HomeDashBoard/>
     },{
       path:"/account",

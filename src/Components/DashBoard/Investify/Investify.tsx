@@ -1,15 +1,16 @@
 import React from "react";
 import { AiFillWarning } from "react-icons/ai";
 import styled from "styled-components";
-import setUp from "../../Image/complete-setup-v3.jpg";
-import account from "../../Image/linkToAccount.png";
+// import setUp from "../../Image/complete-setup-v3.jpg";
+// import account from "../../Image/linkToAccount.png";
 
 const Investify = () => {
   return (
     <Container>
       <Hold>
         <h2>investify</h2>
-        <Account src={account} />
+        {/* <Account src={account} /> */}
+         {/* IM TO COME BACK HERE */}
       </Hold>
       <Wrapper>
         <Right>
@@ -49,7 +50,8 @@ const Investify = () => {
           </Pecentage>
           <Complete>
             <Extected>COMPLETE YOUR SETUP</Extected>
-            <Image src={setUp} />
+            {/* <Image src={setUp} /> */}
+         {/* IM TO COME BACK HERE */}
           </Complete>
         </Left>
       </Wrapper>

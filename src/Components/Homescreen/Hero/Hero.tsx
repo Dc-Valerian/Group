@@ -145,6 +145,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import phone from "../../Assets/hero.jpg";
 import { AiOutlineRight } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -161,7 +162,11 @@ const Hero = () => {
             </P> */}
 
             <Btn>
-              <button>Get started Now</button>
+          <NavLink to="/register">
+          <Button>
+            <button>Get started Now</button>
+            </Button>
+          </NavLink>
 
               <Icons>
                 <Text>Learn More</Text>
@@ -181,6 +186,8 @@ const Hero = () => {
 };
 
 export default Hero;
+
+const Button = styled.div``
 
 const Text = styled.div`
 display: flex;

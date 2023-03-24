@@ -6,44 +6,48 @@ import {
   AiFillSetting,
   AiOutlineClose,
 } from "react-icons/ai";
-import { useAppSelector } from "../../Global/ReduxState/Store";
+// import { useAppSelector } from "../../Global/ReduxState/Store";
 import { useQuery } from "@tanstack/react-query";
-import { GetOneUser } from "../../Api/Api";
+// import { GetOneUser } from "../../Api/Api";
 import axios from "axios";
 import Swal from "sweetalert2";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
-const localUrl = "http://localhost:6400";
+// const localUrl = "http://localhost:6400";
+
+
 const Pigbox = () => {
   const [show, setShow] = useState(false);
-  const user = useAppSelector((state) => state.currentUser);
-  const readUser = useQuery({
-    queryKey: ["user"],
-    queryFn: () => GetOneUser(user?._id),
-  });
+  // const user = useAppSelector((state) => state.currentUser);
+  // const readUser = useQuery({
+  //   queryKey: ["user"],
+  //   queryFn: () => GetOneUser(user?._id),
+  // });
 
-  const schema = yup
-    .object({
-      amount: yup.number().required("field mu"),
-    })
-    .required();
-  type formData = yup.InferType<typeof schema>;
-  const {
-    handleSubmit,
-    formState: { errors },
-    reset,
-    register,
-  } = useForm<formData>({
-    resolver: yupResolver(schema),
-  });
+  // const schema = yup
+  //   .object({
+  //     amount: yup.number().required("field mu"),
+  //   })
+  //   .required();
+  // type formData = yup.InferType<typeof schema>;
+  // const {
+  //   handleSubmit,
+  //   formState: { errors },
+  //   reset,
+  //   register,
+  // } = useForm<formData>({
+  //   resolver: yupResolver(schema),
+  // });
   const Canc = () => {
     setShow(false);
   };
   const Toggle = () => {
     setShow(!false);
   };
+
+
   // const posting = useMutation({
   // mutationFn: (data) => {
   // return TransferMoney(data, user?._id);
@@ -55,24 +59,25 @@ const Pigbox = () => {
   // });
   // },
   // });
-  const onSubmit = handleSubmit(async (data) => {
-    console.log(data);
-    await axios
-      .post(`${localUrl}/api/quick/saveQuick/${user?._id}`, data)
-      .then((res: any) => {
-        Swal.fire({
-          title: "succeful",
-          icon: "success",
-        });
-      })
-      .catch((err: any) => {
-        Swal.fire({
-          title: "an error occured",
-          icon: "error",
-          text: `${err.response?.data?.message}`,
-        });
-      });
-  });
+
+  // const onSubmit = handleSubmit(async (data) => {
+  //   console.log(data);
+  //   await axios
+  //     .post(`${localUrl}/api/quick/saveQuick/${user?._id}`, data)
+  //     .then((res: any) => {
+  //       Swal.fire({
+  //         title: "succeful",
+  //         icon: "success",
+  //       });
+  //     })
+  //     .catch((err: any) => {
+  //       Swal.fire({
+  //         title: "an error occured",
+  //         icon: "error",
+  //         text: `${err.response?.data?.message}`,
+  //       });
+  //     });
+  // });
   return (
     <Container>
       <Left>
@@ -82,12 +87,15 @@ const Pigbox = () => {
               <p>MY BALANCE</p>
             </Text>
             <Naira>
-              {readUser?.data ? (
+              {/* {readUser?.data ? (
                 <h3>#{readUser?.data?.data?.wallet[0]?.Balance}</h3>
               ) : (
                 <h3>₦0.</h3>
-              )}
-              <Button onClick={Toggle}>+QUICK SAVE</Button>
+              )} */}
+              <h3>#0.00</h3>
+              <Button
+              //  onClick={Toggle}
+              >+QUICK SAVE</Button>
             </Naira>
           </Up>
           <Down>
@@ -185,15 +193,15 @@ const Pigbox = () => {
               <p>Tap here & enter .. (e.g 5000)</p>
               <Input
                 type="number"
-                {...register("amount")}
+                // {...register("amount")}
                 placeholder="Tap here & enter..(e.g 5000)"
               />
             </Tap>
 
             <Proceed
-              onClick={() => {
-                onSubmit();
-              }}
+              // onClick={() => {
+              //   onSubmit();
+              // }}
             >
               Proceed
             </Proceed>
